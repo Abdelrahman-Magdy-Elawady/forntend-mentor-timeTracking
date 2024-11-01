@@ -1,0 +1,10 @@
+.parent {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  background-color: var(--Very-dark-blue);
+  min-height: 100vh;
+  width: 100%;
+  border: 1px solid;
+}/*# sourceMappingURL=styles.module.css.map */

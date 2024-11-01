@@ -1,0 +1,64 @@
+@use "sass:map";
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+img {
+  max-width: 100%;
+}
+::after,
+::before {
+  content: "";
+}
+
+:root {
+  // Primary
+  --Blue: hsl(246, 80%, 60%);
+  --bg-work: hsl(15, 100%, 70%);
+  --bg-play: hsl(195, 74%, 62%);
+  --bg-study: hsl(348, 100%, 68%);
+  --bg-exercise: hsl(145, 58%, 55%);
+  --bg-social: hsl(264, 64%, 52%);
+  --bg-selfcare: hsl(43, 84%, 65%);
+  // Neutral
+  --Very-dark-blue: hsl(226, 43%, 10%);
+  --Dark-blue: hsl(235, 46%, 20%);
+  --Desaturated-blue: hsl(235, 45%, 61%);
+  --Pale-Blue: hsl(236, 100%, 87%);
+  //font
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+  color: white;
+}
+
+// Mobile: 375px
+// Desktop: 1440px
+// Font size: 18px (card titles e.g. Work, Play)
+// Weights: 300, 400, 500
+
+$breakpoints: (
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "2xl": 1536px,
+);
+@mixin breakPoint($breakpoint) {
+  @media (min-width: map.get($breakpoints,$breakpoint)) {
+    @content;
+  }
+}
+@include breakPoint(sm) {
+  .font-size {
+    font-size: 1rem;
+  }
+}
