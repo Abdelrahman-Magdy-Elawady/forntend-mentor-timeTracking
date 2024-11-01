@@ -50,6 +50,7 @@ $border-radius: 0.5rem;
 }
 
 .downSection {
+  flex: 1;
   padding: 1rem;
   border-radius: $border-radius;
   background-color: var(--Dark-blue);
@@ -61,5 +62,4 @@ $border-radius: 0.5rem;
     flex-direction: column;
     align-items: start;
   }
-  flex: 1;
 }
