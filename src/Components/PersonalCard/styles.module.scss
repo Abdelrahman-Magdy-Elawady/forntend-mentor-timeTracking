@@ -32,7 +32,6 @@ $border-radius: 0.5rem;
   width: 3rem;
   border: 2px solid white;
   border-radius: 50%;
-  background-color: red;
   display: flex;
   @include breakPoint(md) {
     align-self: start;
