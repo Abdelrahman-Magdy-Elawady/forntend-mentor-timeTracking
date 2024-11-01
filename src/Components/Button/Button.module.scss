@@ -1,0 +1,15 @@
+@use "../../utils.module.scss" as *;
+.button {
+  text-transform: capitalize;
+  background: transparent;
+  font-weight: bold;
+  color: var(--Pale-Blue);
+  transition: color 0.5s;
+  cursor: pointer;
+  &:hover {
+    color: white;
+  }
+  &:focus {
+    color: white;
+  }
+}

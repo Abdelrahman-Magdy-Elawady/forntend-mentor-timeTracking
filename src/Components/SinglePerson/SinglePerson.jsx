@@ -1,16 +1,19 @@
 import styles from "./styles.module.scss";
-import {
-  workIcon,
-  studyIcon,
-  socialIcon,
-  selfCareIcon,
-  playIcon,
-  exerciseIcon,
-  ellipsis,
-} from "../../assets";
+import { useState } from "react";
 import { TimeLineCard, PersonalCard } from "../index";
+import { useCallback } from "react";
 export default function SinglePerson({ data }) {
-  console.log(data);
+  const [filterTerm, setFilterTerm] = useState("daily");
+  const filterSetter = useCallback((filterType) => {
+    if (
+      filterType !== "daily" ||
+      filterType !== "weekly" ||
+      filterType !== "monthly"
+    )
+      return;
+    setFilterTerm(filterType);
+  }, []);
+
   return (
     <div className="">
       <PersonalCard
@@ -18,11 +21,13 @@ export default function SinglePerson({ data }) {
           name: data.name,
           img: data.img,
         }}
+        filterSetter={filterSetter}
       />
       <TimeLineCard
         data={{
           timeLine: data.timeLine,
         }}
+        type="work"
       />
     </div>
   );
